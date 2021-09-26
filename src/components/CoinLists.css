@@ -6,6 +6,13 @@
     min-height: 80px;
     border-bottom: 1px solid #444;
     width: 100%;
+    padding: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.coin-row:hover {
+    background-color: #333;
 }
 
 .coin {
@@ -78,11 +85,6 @@
 
 
 @media (max-width: 767px) {
-    .coin-row {
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-    }
-
     .coin-info h1,
     .coin-info {
         font-size: 14px;

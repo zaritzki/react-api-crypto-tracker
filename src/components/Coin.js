@@ -1,7 +1,8 @@
 import React from 'react';
-import './Coin.css';
+import { Link } from 'react-router-dom';
 
 const Coin = ({ 
+    id,
     name, 
     image, 
     symbol, 
@@ -12,7 +13,7 @@ const Coin = ({
 }) => {
 
     return (
-        <div className="coin-row">
+        <Link to={`/coins/${id}`} className="coin-row">
             <div className="coin-info">
                 <div className="coin">
                     <img src={image} alt={name} />
@@ -22,18 +23,18 @@ const Coin = ({
             </div>
             <div className="coin-detail">
                 <div className="coin-data">
-                    <p className="coin-price"><span>Price:</span> ${price.toLocaleString()}</p>
+                    <p className="coin-price"><span>Price:</span> &euro;{price.toLocaleString()}</p>
                     {priceChange < 0 ? (
                         <p className="coin-percent red"><span>24h:</span> {priceChange.toFixed(2)}%</p>
                     ) : (
                         <p className="coin-percent green"><span>24h:</span> {priceChange.toFixed(2)}%</p>
                     )}
-                    <p className="coin-volume"><span>24h Volume:</span> ${volume.toLocaleString()}</p>
-                    <p className="coin-marketcap"><span>Mkt Cap:</span> ${marketcap.toLocaleString()}</p>
+                    <p className="coin-volume"><span>24h Volume:</span> &euro;{volume.toLocaleString()}</p>
+                    <p className="coin-marketcap"><span>Mkt Cap:</span> &euro;{marketcap.toLocaleString()}</p>
                 </div>
             </div>
-        </div>
+        </Link>
     )
-}
+};
 
 export default Coin;
