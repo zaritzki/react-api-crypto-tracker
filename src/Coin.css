@@ -1,0 +1,145 @@
+.coin-row {
+    display: flex;
+    flex-direction: column;
+    justify-items: start;
+    align-items: flex-start;
+    min-height: 80px;
+    border-bottom: 1px solid #444;
+    width: 100%;
+}
+
+.coin {
+    display: flex;
+    align-items: center;
+    padding-right: 24px;
+    min-width: 300px;
+}
+
+.coin h1 {
+    font-size: 16px;
+    width: 150px;
+}
+
+.coin img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+
+.coin-symbol {
+    text-decoration: uppercase;
+}
+
+.coin-info {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.coin-detail {
+    display: block;
+    width: 100%;
+}
+
+.coin-data {
+    display: flex;
+    text-align: start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.coin-price {
+    width: 110px;
+}
+
+.coin-volume {
+    width: 200px;
+}
+
+.coin-marketcap {
+    width: 240px;
+}
+
+.coin-detail span {
+    color: #999;
+    display: block;
+}
+
+.coin-percent {
+    width: 80px;
+}
+
+.red {
+    color: #f00606;
+}
+
+.green {
+    color: #11d811;
+}
+
+
+@media (max-width: 767px) {
+    .coin-row {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+
+    .coin-info h1,
+    .coin-info {
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .coin img {
+        height: 20px;
+        width: 20px;
+    }
+
+    .coin-detail {
+        font-size: 12px;
+    }
+
+    .coin-detail span {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+    .coin-price {
+        width: 18%;
+    }
+    .coin-percent {
+        width: auto;
+    }
+    
+    .coin-volume {
+        width: 110px;
+    }
+    
+    .coin-marketcap {
+        width: auto;
+    }
+}
+@media (min-width: 768px) {
+    .coin-row {
+        flex-direction: row;
+        align-items: center;
+    }
+    .coin-info {
+        display: flex;
+        margin-bottom: 0;
+    }
+    .coin-detail {
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .coin-data {
+        text-align: center;
+    }
+
+    .coin-detail span {
+        display: none;
+    }
+    .coin-marketcap span {
+        display: inline-block;
+    }
+}
