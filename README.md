@@ -13,4 +13,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Video / Screenshots
 
-Click this [https://drive.google.com/drive/folders/1-W0BtgDhzcrC5PFG9u6EvX_NGFTrhM6B?usp=sharing](Google Drive) to view it in the browser.
+Click this https://drive.google.com/drive/folders/1-W0BtgDhzcrC5PFG9u6EvX_NGFTrhM6B?usp=sharing to view it in the browser.
