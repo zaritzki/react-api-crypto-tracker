@@ -9,6 +9,7 @@
     padding: 10px;
     text-decoration: none;
     color: inherit;
+    transition: all 0.5s ease;
 }
 
 .coin-row:hover {
@@ -74,15 +75,6 @@
 .coin-percent {
     width: 80px;
 }
-
-.red {
-    color: #f00606;
-}
-
-.green {
-    color: #11d811;
-}
-
 
 @media (max-width: 767px) {
     .coin-info h1,

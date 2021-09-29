@@ -2,8 +2,9 @@ export const  HistoryOptions = {
     lineHeightAnnotation: {
         always: true,
         hover: false,
-        lineWeight: 1.5,
+        lineWeight: 4,
     },
+    
     animation: {
         duration: 2000,
     },
@@ -12,9 +13,22 @@ export const  HistoryOptions = {
     scales: {
         xAxes: [
             {
-                type: 'time',
-                distribution: 'linear',
+                type: "time",
+                distribution: "linear",
             },
         ],
-    },
+        x: {
+            grid: {
+                color: '#333',
+                borderColor: '#333'
+            }
+        },
+        y: {
+            beginAtZero: true,
+            grid: {
+                color: '#333',
+                borderColor: '#333'
+            }
+        }
+    }
 };

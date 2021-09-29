@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import imgUp from "../assets/up.png";
+import imgDown from "../assets/down.png";
+
 const Coin = ({ 
     id,
     name, 
@@ -25,9 +28,9 @@ const Coin = ({
                 <div className="coin-data">
                     <p className="coin-price"><span>Price:</span> &euro;{price.toLocaleString()}</p>
                     {priceChange < 0 ? (
-                        <p className="coin-percent red"><span>24h:</span> {priceChange.toFixed(2)}%</p>
+                        <p className="coin-percent red"><span>24h:</span><img className="chart-arrow" src={imgDown} alt={priceChange.toFixed(2)} /> {priceChange.toFixed(2)}%</p>
                     ) : (
-                        <p className="coin-percent green"><span>24h:</span> {priceChange.toFixed(2)}%</p>
+                        <p className="coin-percent green"><span>24h:</span><img className="chart-arrow" src={imgUp} alt={priceChange.toFixed(2)} /> {priceChange.toFixed(2)}%</p>
                     )}
                     <p className="coin-volume"><span>24h Volume:</span> &euro;{volume.toLocaleString()}</p>
                     <p className="coin-marketcap"><span>Mkt Cap:</span> &euro;{marketcap.toLocaleString()}</p>

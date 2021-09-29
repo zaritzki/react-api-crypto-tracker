@@ -1,38 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import CoinGecko from '../apis/CoinGecko';
 
-import AppName from '../components/AppName';
+import Loader from '../components/Loader';
 import CoinLists from '../components/CoinLists';
 
-import '../components/CoinLists.css';
+import '../assets/CoinLists.css';
 
 const CoinSummaryPage = () => {
     const [coins, setCoins] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const [search, setSearch] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
-            setLoading(true);
+            setIsLoading(true);
 
             const res = await CoinGecko.get('/coins/markets', {
-                    params: {
-                        vs_currency: 'eur',
-                        order: 'market_cap_desc',
-                        per_page: 10,
-                        page: 1,
-                        sparkline: false
-                    }  
-                }).then(res => {
-                    // console.log(res.data);
-                    setCoins(res.data);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
+                params: {
+                    vs_currency: 'eur',
+                    order: 'market_cap_desc',
+                    per_page: 20,
+                    page: 1,
+                    sparkline: false
+                }  
+            }).then(res => {
+                // console.log(res.data);
+                setCoins(res.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
 
-            setLoading(false);
+            setIsLoading(false);
         }
 
         fetchData();
@@ -50,14 +50,15 @@ const CoinSummaryPage = () => {
 
     return (
         <div className="coin-app">
-            <AppName />
             <div className="coin-search">
                 <form>
                     <input type="text" placeholder="Search" className="coin-input" onChange={handleChange} />
                 </form>
             </div>
 
-            {loading ? 'Loading' : (
+            {isLoading ? (
+                <Loader />
+            ) : (
                 <CoinLists filteredCoins={filteredCoins} />
                 )
             }
